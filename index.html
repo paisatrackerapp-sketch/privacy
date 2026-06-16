@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Paisa Tracker</title>
+<meta name="description" content="Privacy Policy for the Paisa Tracker personal expense-tracking mobile application.">
+<style>
+  :root {
+    --bg:            #f6f7f9;
+    --surface:       #ffffff;
+    --surface-soft:  #fafbfc;
+    --text:          #0f172a;
+    --text-soft:     #334155;
+    --muted:         #64748b;
+    --border:        #e2e8f0;
+    --border-strong: #cbd5e1;
+    --accent:        #047857;
+    --accent-soft:   #ecfdf5;
+    --accent-hover:  #035e44;
+    --shadow-sm:     0 1px 2px rgba(15, 23, 42, 0.04);
+    --shadow-md:     0 4px 16px rgba(15, 23, 42, 0.06);
+    --radius:        12px;
+    --radius-sm:     6px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+  a:hover { color: var(--accent-hover); }
+
+  /* ── Top nav ────────────────────────────────────────────────────────── */
+  .topnav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .topnav-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 14px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: -0.01em;
+    color: var(--text);
+  }
+  .brand-mark {
+    width: 28px; height: 28px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--accent), #10b981);
+    display: grid; place-items: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 13px;
+    box-shadow: var(--shadow-sm);
+  }
+  .topnav-tag {
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  /* ── Hero ────────────────────────────────────────────────────────────── */
+  .hero {
+    background:
+      radial-gradient(900px 360px at 80% -40%, rgba(16, 185, 129, 0.10), transparent 60%),
+      radial-gradient(700px 300px at 10% -10%, rgba(4, 120, 87, 0.08), transparent 60%),
+      var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+  .hero-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 64px 32px 56px;
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 5px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: clamp(34px, 4.5vw, 52px);
+    font-weight: 700;
+    margin: 0 0 16px;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    color: var(--text);
+  }
+  .hero-lede {
+    font-size: clamp(16px, 1.4vw, 19px);
+    color: var(--text-soft);
+    max-width: 720px;
+    margin: 0 0 28px;
+    line-height: 1.6;
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .meta-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    color: var(--text-soft);
+    box-shadow: var(--shadow-sm);
+  }
+  .meta-chip strong { color: var(--text); font-weight: 600; }
+  .meta-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  /* ── Two-column layout ───────────────────────────────────────────────── */
+  .page {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 56px 32px 96px;
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 64px;
+    align-items: start;
+  }
+
+  /* ── Sticky sidebar TOC ──────────────────────────────────────────────── */
+  .sidebar {
+    position: sticky;
+    top: 84px;
+  }
+  .sidebar-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    font-weight: 700;
+    margin: 0 0 14px;
+    padding-left: 12px;
+  }
+  .toc-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-left: 1px solid var(--border);
+  }
+  .toc-list li { margin: 0; }
+  .toc-list a {
+    display: block;
+    padding: 7px 12px;
+    font-size: 13.5px;
+    color: var(--muted);
+    border-left: 2px solid transparent;
+    margin-left: -1px;
+    line-height: 1.4;
+  }
+  .toc-list a:hover {
+    color: var(--text);
+    background: var(--surface-soft);
+  }
+  .toc-list a.active {
+    color: var(--accent);
+    border-left-color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* ── Main content ────────────────────────────────────────────────────── */
+  .content { min-width: 0; max-width: 820px; }
+  .content > p, .content > ul, .content > ol {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--text-soft);
+    margin: 0 0 16px;
+  }
+  .content ul, .content ol { padding-left: 24px; }
+  .content li { margin-bottom: 8px; }
+  .content strong { color: var(--text); font-weight: 600; }
+
+  section { scroll-margin-top: 96px; padding-top: 8px; }
+  section + section { margin-top: 56px; }
+  section h2 {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0 0 18px;
+    color: var(--text);
+    line-height: 1.25;
+  }
+  section h2 .num {
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    background: var(--accent-soft);
+    padding: 3px 9px;
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+  section h3 {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 28px 0 10px;
+    color: var(--text);
+    letter-spacing: -0.005em;
+  }
+
+  /* ── Tables ──────────────────────────────────────────────────────────── */
+  .table-wrap {
+    overflow-x: auto;
+    margin: 20px 0;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 14.5px;
+  }
+  thead { background: var(--surface-soft); }
+  th, td {
+    padding: 14px 18px;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid var(--border);
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  th {
+    font-weight: 600;
+    color: var(--text);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  td {
+    color: var(--text-soft);
+    line-height: 1.55;
+  }
+
+  /* ── Callout cards ───────────────────────────────────────────────────── */
+  .callout {
+    background: linear-gradient(180deg, var(--accent-soft), #f0fdf4);
+    border: 1px solid #a7f3d0;
+    border-radius: var(--radius);
+    padding: 20px 22px;
+    margin: 24px 0;
+    line-height: 1.65;
+    color: var(--text);
+  }
+  .callout strong { color: var(--text); font-weight: 700; }
+
+  /* ── Inline emphasis ─────────────────────────────────────────────────── */
+  .content em {
+    color: var(--text);
+    font-style: italic;
+  }
+
+  /* ── Intro block ─────────────────────────────────────────────────────── */
+  .intro {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin-bottom: 48px;
+    box-shadow: var(--shadow-sm);
+  }
+  .intro p {
+    margin: 0 0 12px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-soft);
+  }
+  .intro p:last-child { margin-bottom: 0; }
+
+  /* ── Footer ──────────────────────────────────────────────────────────── */
+  .page-footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+  }
+  .page-footer-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 32px;
+    font-size: 13.5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  /* ── Responsive ──────────────────────────────────────────────────────── */
+  @media (max-width: 960px) {
+    .page {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      padding: 32px 24px 64px;
+    }
+    .sidebar {
+      position: static;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      box-shadow: var(--shadow-sm);
+    }
+    .sidebar-label { padding-left: 0; }
+    .toc-list { border-left: none; column-count: 2; column-gap: 24px; }
+    .toc-list a { padding: 5px 0; border-left: none; }
+    .toc-list a.active { border-left: none; background: transparent; }
+    .hero-inner { padding: 48px 24px 40px; }
+    .topnav-inner { padding: 12px 24px; }
+    .page-footer-inner { padding: 24px; }
+  }
+  @media (max-width: 560px) {
+    .toc-list { column-count: 1; }
+    section h2 { font-size: 22px; gap: 10px; }
+    section h2 .num { font-size: 12px; padding: 2px 7px; }
+    .hero h1 { font-size: 30px; }
+    .hero-lede { font-size: 15.5px; }
+    .meta-chip { font-size: 12px; padding: 6px 11px; }
+    .intro, .callout { padding: 18px 20px; }
+    th, td { padding: 11px 13px; font-size: 13.5px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── Top navigation ─────────────────────────────────────────────────── -->
+<nav class="topnav">
+  <div class="topnav-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark">P</span>
+      Paisa Tracker
+    </a>
+    <span class="topnav-tag">Privacy Policy</span>
+  </div>
+</nav>
+
+<!-- ── Hero ───────────────────────────────────────────────────────────── -->
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <span class="eyebrow"><span class="meta-dot"></span> Legal</span>
+    <h1>Privacy Policy</h1>
+    <p class="hero-lede">
+      How Paisa Tracker collects, uses, stores, and protects your information.
+      Written to be clear and complete — covering the SMS permission, encryption,
+      data sharing, your rights, and account deletion.
+    </p>
+    <div class="meta-row">
+      <span class="meta-chip"><strong>Effective</strong> 15 June 2026</span>
+      <span class="meta-chip"><strong>Last updated</strong> 15 June 2026</span>
+      <span class="meta-chip"><span class="meta-dot"></span> Applies to all users worldwide</span>
+    </div>
+  </div>
+</header>
+
+<!-- ── Body ───────────────────────────────────────────────────────────── -->
+<main class="page">
+
+  <!-- ── Sticky sidebar TOC ─────────────────────────────────────────── -->
+  <aside class="sidebar" aria-label="Table of contents">
+    <p class="sidebar-label">On this page</p>
+    <ul class="toc-list" id="toc">
+      <li><a href="#who-we-are">1. Who we are</a></li>
+      <li><a href="#what-we-collect">2. Information we collect</a></li>
+      <li><a href="#sms-permission">3. Permissions we request</a></li>
+      <li><a href="#how-we-use">4. How we use your information</a></li>
+      <li><a href="#sharing">5. Sharing &amp; third parties</a></li>
+      <li><a href="#security">6. How we secure your data</a></li>
+      <li><a href="#retention">7. Data retention</a></li>
+      <li><a href="#rights">8. Your rights and choices</a></li>
+      <li><a href="#delete">9. Deleting your account</a></li>
+      <li><a href="#children">10. Children's privacy</a></li>
+      <li><a href="#changes">11. Changes to this policy</a></li>
+      <li><a href="#grievance">12. Grievance Officer</a></li>
+      <li><a href="#contact">13. Contact</a></li>
+    </ul>
+  </aside>
+
+  <!-- ── Main content ──────────────────────────────────────────────── -->
+  <article class="content">
+
+    <div class="intro">
+      <p>This Privacy Policy explains how <strong>Paisa Tracker</strong> ("we", "our", "the App") collects, uses, stores, and protects your information when you use our mobile application and related services. Paisa Tracker is built and operated by an independent developer based in India and is offered free of charge for personal, non-commercial use.</p>
+      <p>If anything is unclear or you would like to exercise any right described below, please contact us using the details in section&nbsp;13.</p>
+    </div>
+
+    <section id="who-we-are">
+      <h2><span class="num">01</span> Who we are</h2>
+      <p>Paisa Tracker is a personal expense-tracking mobile application that helps users understand their spending by automatically detecting transactions from bank SMS messages and presenting them as charts, budgets, daily limits, streaks, and downloadable reports. The App is intended for individual personal use.</p>
+      <p>The data controller for the purposes of this policy is Ritesh, the independent developer of Paisa Tracker. Contact details are listed in section&nbsp;13.</p>
+    </section>
+
+    <section id="what-we-collect">
+      <h2><span class="num">02</span> Information we collect</h2>
+      <p>We only collect information that is necessary to provide the App's functionality. The categories of information we collect are listed below.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Category</th><th>Examples</th><th>Source</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Account information</strong></td>
+              <td>Full name, email address</td>
+              <td>You provide it during sign-up</td>
+            </tr>
+            <tr>
+              <td><strong>Authentication codes</strong></td>
+              <td>Six-digit one-time passwords (OTP)</td>
+              <td>Generated by us, sent to your email</td>
+            </tr>
+            <tr>
+              <td><strong>Financial information</strong></td>
+              <td>Transaction amount, merchant name, category, sub-category, transaction date and time, bank name, masked account number (last four digits only), UPI reference (where applicable)</td>
+              <td>Parsed from bank SMS messages on your device</td>
+            </tr>
+            <tr>
+              <td><strong>SMS content</strong></td>
+              <td>The body of transactional SMS messages from banks and payment services</td>
+              <td>Read from your device with your explicit permission</td>
+            </tr>
+            <tr>
+              <td><strong>Device information</strong></td>
+              <td>Firebase Cloud Messaging (FCM) token, optional device model name</td>
+              <td>Provided by your device for push notifications</td>
+            </tr>
+            <tr>
+              <td><strong>App preferences</strong></td>
+              <td>Daily spending limit, budget settings, app-lock toggle, notification preferences, parser-version sync state</td>
+              <td>You set these inside the App</td>
+            </tr>
+            <tr>
+              <td><strong>Usage events</strong></td>
+              <td>Last login timestamp, transaction edits, streak state</td>
+              <td>Generated automatically as you use the App</td>
+            </tr>
+            <tr>
+              <td><strong>Diagnostic submissions</strong></td>
+              <td>SMS messages that the App failed to parse, which you may optionally report to help improve detection</td>
+              <td>You submit them voluntarily from inside the App</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>We do <strong>not</strong> collect: your phone number, your contacts list, your location, advertising identifiers, your photos, your call log, your microphone or camera input, or messages from non-financial senders.</p>
+    </section>
+
+    <section id="sms-permission">
+      <h2><span class="num">03</span> Permissions we request</h2>
+      <p>This section lists every system permission the App may ask for and what we do with the data each one provides. SMS access is the most sensitive and is covered first in detail; the rest follow.</p>
+
+      <h3>SMS access &mdash; <code>READ_SMS</code>, <code>RECEIVE_SMS</code></h3>
+      <p>Reading SMS is a sensitive permission under Google Play policies, so we explain its use separately and in detail.</p>
+
+      <p><strong>Why we request it.</strong> The App's core feature is automatic detection of bank transactions. To detect a transaction without requiring manual entry, the App reads SMS messages from your bank, card issuer, or UPI provider and extracts the amount, merchant, date, and account. This permission is requested only after an in-App explanation, and you may decline it. If you decline, automatic transaction detection will not be available, but the rest of the App will continue to function.</p>
+
+      <p><strong>Which messages are processed.</strong> The App processes messages only from senders that match recognised bank, card, and UPI sender identifiers (for example HDFCBK, ICICIB, SBIINB, AXISBK, KOTAKB, and similar). Messages from personal contacts, friends, OTP senders for other services, promotional senders, and any non-financial source are ignored and never transmitted off your device.</p>
+
+      <p><strong>What happens to the SMS content.</strong></p>
+      <ul>
+        <li>The SMS body is first parsed on your device to extract structured transaction fields.</li>
+        <li>The parsed fields, along with the original SMS body, are transmitted to our backend server over an encrypted HTTPS connection.</li>
+        <li>On the server, the original SMS body is stored in an encrypted form (see section&nbsp;6) so that the App can re-parse messages when our detection logic improves, without requiring you to re-grant SMS permission.</li>
+        <li>SMS content is <strong>never</strong> used for advertising, behavioural profiling, sold, or shared with any third party for marketing or analytic purposes.</li>
+      </ul>
+
+      <p><strong>Your control over SMS data.</strong> You may revoke the SMS permission at any time from your device's system Settings. You may also wipe all stored SMS-derived data from the App's Settings screen ("Sync all SMS" &rarr; Wipe). Wiping deletes both the parsed transactions and the encrypted SMS copies on our server for your account, while preserving your account itself, your budgets, and your preferences.</p>
+
+      <h3>Notifications &mdash; <code>POST_NOTIFICATIONS</code></h3>
+      <p>Used to deliver push notifications such as daily-limit alerts, budget-breach warnings, large-spend warnings, and parser-update announcements. The permission is requested at the end of onboarding (not at app start), so you are not ambushed by a permission dialog before you have finished signing up. You can revoke it at any time in your device Settings, or disable individual notification categories inside the App.</p>
+
+      <h3>Biometric authentication &mdash; <code>USE_BIOMETRIC</code>, <code>USE_FINGERPRINT</code></h3>
+      <p>Optional. Only used if you enable the on-device App Lock feature. Biometric matching (fingerprint or face) is performed by your device's secure hardware and is never transmitted to our servers. The PIN you set as a fallback is stored in your device's encrypted Keychain (iOS) or Keystore (Android), not on our servers.</p>
+
+      <h3>Background activity &mdash; <code>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</code></h3>
+      <p>Optional. Asked on devices that aggressively kill background services (Vivo, Xiaomi, Realme, OPPO, and similar). Without this exemption, you would miss transactions that arrive while the App is closed. Declining the prompt does not disable any other feature; you will simply have to open the App for the latest transactions to appear.</p>
+
+      <h3>Internet &mdash; <code>INTERNET</code></h3>
+      <p>Required for all communication with our backend servers and Firebase Cloud Messaging. This is a standard permission for any connected mobile app and is not subject to a runtime prompt on Android.</p>
+    </section>
+
+    <section id="how-we-use">
+      <h2><span class="num">04</span> How we use your information</h2>
+      <p>We use the information we collect strictly for the purposes listed below. Each purpose is tied to a specific feature of the App.</p>
+      <ul>
+        <li><strong>Authenticating you</strong> &mdash; We send a one-time password to your email and verify it to sign you in. We do not store passwords.</li>
+        <li><strong>Showing your finances</strong> &mdash; We display your transactions, charts, budgets, daily limits, and streaks based on the data parsed from your SMS messages.</li>
+        <li><strong>Sending notifications</strong> &mdash; We send push notifications for events such as daily-limit alerts, budget breach warnings, large-spend warnings, and parser updates. You can disable individual categories of notifications in App Settings.</li>
+        <li><strong>Generating reports</strong> &mdash; When you request a PDF report, we generate it server-side and email it to the address registered on your account.</li>
+        <li><strong>Improving SMS parsing</strong> &mdash; If you opt in by submitting an "untracked SMS" report, we use that submission to improve our parser. Submission is always manual and you choose what to send.</li>
+        <li><strong>Security and abuse prevention</strong> &mdash; We log basic request metadata (request type, network IP address, timestamp) to detect and block abuse, brute-force attempts, and email bombing.</li>
+      </ul>
+      <p>We do <strong>not</strong>: serve advertisements, build advertising profiles, sell your data, share your data with data brokers, or use your data to train machine-learning models that are made available to third parties.</p>
+
+      <h3>What we explicitly do not use</h3>
+      <p>We avoid common patterns found in other free apps that can quietly erode user privacy. Specifically, Paisa Tracker contains no:</p>
+      <ul>
+        <li><strong>Cookies or web-tracking technologies</strong> &mdash; the App is native; there are no web cookies, no local storage cookies, no fingerprinting scripts.</li>
+        <li><strong>Third-party analytics SDKs</strong> &mdash; no Google Analytics, no Firebase Analytics, no Mixpanel, no Amplitude, no PostHog. We do not collect screen-view events, tap heatmaps, or session recordings.</li>
+        <li><strong>Advertising or attribution SDKs</strong> &mdash; no AdMob, no Facebook SDK, no AppsFlyer, no Adjust, no Branch.</li>
+        <li><strong>Marketing email lists</strong> &mdash; every email we send is transactional: a one-time password, a report you requested, a security alert, or a deletion confirmation. We do not send newsletters or promotional emails.</li>
+        <li><strong>Automated profiling for advertising or decision-making</strong> &mdash; we categorise transactions to display them in the App, but we do not score, rank, or profile you for any external purpose.</li>
+      </ul>
+    </section>
+
+    <section id="sharing">
+      <h2><span class="num">05</span> Sharing and third parties</h2>
+      <p>We share data only with the service providers strictly required to operate the App. Each provider acts as our processor under their own privacy obligations.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Service</th><th>Provider</th><th>What is shared</th><th>Purpose</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Application hosting and database</strong></td>
+              <td>Railway Corp. (railway.app)</td>
+              <td>All application data, stored in a managed PostgreSQL instance</td>
+              <td>Server hosting and database storage</td>
+            </tr>
+            <tr>
+              <td><strong>Push notifications</strong></td>
+              <td>Firebase Cloud Messaging (Google LLC)</td>
+              <td>Device FCM token; notification payloads, which contain a short human-readable message and no card numbers or balances</td>
+              <td>Delivering push notifications to your device</td>
+            </tr>
+            <tr>
+              <td><strong>Transactional email</strong></td>
+              <td>Resend Inc. or Google Gmail SMTP, depending on configuration</td>
+              <td>Recipient email address, OTP codes, PDF report attachments</td>
+              <td>Sending OTP codes and downloadable reports</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>We do not share data with advertisers, analytics networks, data brokers, or any party for commercial purposes. We may disclose information when required by valid legal process (court order, subpoena, statutory request from a competent authority in India), and only to the minimum extent legally required. Where lawfully permitted, we will notify you before such disclosure.</p>
+
+      <h3>Where your data is stored</h3>
+      <p>Our application servers and PostgreSQL database run on Railway Corp.'s managed infrastructure (railway.app). Railway operates data centres in the United States and the European Union, and our database is provisioned in a Railway-managed region. By using the App, you acknowledge that your personal data may be transferred to and processed on servers located outside India. We rely on Railway's contractual security commitments and on the encryption controls described in section&nbsp;6 to protect your data during such transfer and processing. If a competent Indian Data Protection Authority later mandates in-country storage for personal-finance data, we will migrate the database accordingly and notify users in advance.</p>
+
+      <h3>Third-party privacy policies</h3>
+      <p>For data that flows through our sub-processors, their own privacy policies and terms also apply. We recommend reviewing them if you want a complete picture of how those companies handle the limited data we send them:</p>
+      <ul>
+        <li>Firebase Cloud Messaging &mdash; <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">firebase.google.com/support/privacy</a> and Google's overall policy at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>.</li>
+        <li>Railway &mdash; <a href="https://railway.app/legal/privacy" target="_blank" rel="noopener noreferrer">railway.app/legal/privacy</a>.</li>
+        <li>Resend &mdash; <a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">resend.com/legal/privacy-policy</a>.</li>
+      </ul>
+    </section>
+
+    <section id="security">
+      <h2><span class="num">06</span> How we secure your data</h2>
+      <p>We follow security practices appropriate to the sensitivity of personal-finance data:</p>
+      <ul>
+        <li><strong>Encryption in transit</strong> &mdash; All traffic between the App and our servers uses HTTPS with TLS. HTTP Strict Transport Security (HSTS) is enforced for one year, including subdomains.</li>
+        <li><strong>Encryption at rest for sensitive fields</strong> &mdash; The raw SMS body, masked account number, UPI reference, and available-balance fields are encrypted at the application layer using AES-256 in GCM mode before being written to the database. The encryption key is stored only in our server environment, is never committed to source code, and is loaded from a secret environment variable at boot time.</li>
+        <li><strong>Passwordless authentication</strong> &mdash; We do not store passwords at all. Sign-in uses a short-lived OTP delivered to your verified email.</li>
+        <li><strong>Token security</strong> &mdash; Sessions use signed JSON Web Tokens bound to a specific issuer and audience. Tokens expire automatically and can be revoked at logout via a server-side blocklist.</li>
+        <li><strong>Rate limiting</strong> &mdash; OTP requests and verifications are rate-limited per email address and per network IP to prevent brute-force and email-bombing abuse.</li>
+        <li><strong>Least privilege</strong> &mdash; Only authenticated requests scoped to your own user account can read or modify your data. Cross-account access is impossible by design.</li>
+        <li><strong>Input bounds</strong> &mdash; All batch and date-range inputs are capped server-side to prevent resource-exhaustion attacks.</li>
+      </ul>
+      <p>No system is perfectly secure. If we become aware of a security incident materially affecting your data, we will notify you by email and through the App within a reasonable time and in accordance with applicable law.</p>
+    </section>
+
+    <section id="retention">
+      <h2><span class="num">07</span> Data retention</h2>
+      <ul>
+        <li><strong>Account and transaction data</strong> &mdash; Retained for as long as your account exists. Deleted permanently when you delete your account.</li>
+        <li><strong>Encrypted SMS bodies</strong> &mdash; Retained alongside the related transaction. Removed when you wipe SMS data or delete your account.</li>
+        <li><strong>One-time passwords (OTP)</strong> &mdash; Expire ten minutes after issue and are removed shortly thereafter.</li>
+        <li><strong>JWT access tokens</strong> &mdash; Expire 24 hours after issue. Refresh tokens expire after seven days. Revoked tokens are retained on the blocklist only until their natural expiry.</li>
+        <li><strong>Export job records</strong> &mdash; PDF reports are delivered to your email and the job record is removed within a short retention window after completion.</li>
+        <li><strong>Diagnostic submissions</strong> &mdash; Kept until the parser-improvement work referenced by the submission is complete, then deleted.</li>
+        <li><strong>Server logs</strong> &mdash; Routine request logs are retained for up to 30 days for security and debugging.</li>
+      </ul>
+    </section>
+
+    <section id="rights">
+      <h2><span class="num">08</span> Your rights and choices</h2>
+      <p>You have the following rights regarding your personal data. Where you are located in a jurisdiction that grants additional rights &mdash; for example, the European Economic Area under the GDPR, the United Kingdom under the UK GDPR, or India under the Digital Personal Data Protection Act, 2023 &mdash; those rights apply in addition to the controls described below.</p>
+      <ul>
+        <li><strong>Access</strong> &mdash; View your account and transaction data inside the App at any time. You may also request a structured export using the in-app PDF report feature.</li>
+        <li><strong>Correction</strong> &mdash; Edit your name, email address, transaction categories, budgets, and preferences directly inside the App.</li>
+        <li><strong>Deletion</strong> &mdash; Delete your entire account and all associated data from the App (see section&nbsp;9), or wipe only your SMS-derived data while keeping your account.</li>
+        <li><strong>Withdraw consent</strong> &mdash; Revoke SMS or notification permissions at any time in your device Settings. The App will continue to function for any features that do not require the revoked permission.</li>
+        <li><strong>Portability</strong> &mdash; Request a copy of your data in a machine-readable format by emailing us (section&nbsp;13). We will respond within 30 days.</li>
+        <li><strong>Object or complain</strong> &mdash; Contact our Grievance Officer (section&nbsp;12) or, if you are in the EEA or UK, your local data-protection authority.</li>
+      </ul>
+    </section>
+
+    <section id="delete">
+      <h2><span class="num">09</span> Deleting your account</h2>
+      <p>You can delete your account in two ways:</p>
+      <ol>
+        <li><strong>From inside the App</strong> &mdash; Go to <em>Settings &rarr; Account &rarr; Delete account</em>. You will be asked to confirm. The deletion is immediate and permanent.</li>
+        <li><strong>By email request</strong> &mdash; If you no longer have the App installed, send a deletion request from the email address registered with your account to <a href="mailto:support@paisatrackerapp.in">support@paisatrackerapp.in</a> with the subject line <em>"Account deletion request"</em>. We will verify ownership by sending an OTP to that email and complete deletion within seven business days.</li>
+      </ol>
+      <p>Deletion removes: your account record, all transactions, encrypted SMS bodies, budgets, preferences, device tokens, notification history, and export job records associated with your account. Routine server logs may retain anonymised request metadata for up to 30 days as described in section&nbsp;7. Once deleted, your data cannot be recovered.</p>
+    </section>
+
+    <section id="children">
+      <h2><span class="num">10</span> Children's privacy</h2>
+      <p>Paisa Tracker is not directed to children under the age of 18 and we do not knowingly collect personal information from children. If you believe a child has provided us personal information, please contact us at <a href="mailto:support@paisatrackerapp.in">support@paisatrackerapp.in</a> and we will delete the information promptly.</p>
+    </section>
+
+    <section id="changes">
+      <h2><span class="num">11</span> Changes to this policy</h2>
+      <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for legal, operational, or regulatory reasons. When we make a material change, we will update the "Last updated" date at the top of this page and, where required by law, notify you through the App or by email. Continued use of the App after a change takes effect constitutes acceptance of the updated policy.</p>
+
+      <h3>Governing law and jurisdiction</h3>
+      <p>This Privacy Policy is governed by, and construed in accordance with, the laws of India. Any dispute, claim, or proceeding arising out of or in connection with this policy will be subject to the exclusive jurisdiction of the competent courts in India. Users located outside India retain any non-waivable rights granted by their local data-protection laws, which apply in addition to (and not instead of) the rights described in this policy.</p>
+    </section>
+
+    <section id="grievance">
+      <h2><span class="num">12</span> Grievance Officer</h2>
+      <p>In accordance with the Information Technology Act, 2000 (India), the Information Technology (Intermediary Guidelines and Digital Media Ethics Code) Rules, 2021, and the Digital Personal Data Protection Act, 2023, the Grievance Officer for Paisa Tracker is:</p>
+      <div class="callout">
+        <strong>Ritesh</strong><br>
+        Grievance Officer, Paisa Tracker<br>
+        Email: <a href="mailto:support@paisatrackerapp.in">support@paisatrackerapp.in</a><br>
+        Response time: within 30 days of receipt of a verified complaint
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2><span class="num">13</span> Contact</h2>
+      <p>For any question about this Privacy Policy, the data we hold about you, or to exercise any right described above, please write to us:</p>
+      <div class="callout">
+        <strong>Paisa Tracker</strong><br>
+        Email: <a href="mailto:support@paisatrackerapp.in">support@paisatrackerapp.in</a><br>
+        Country of operation: India
+      </div>
+    </section>
+
+  </article>
+</main>
+
+<!-- ── Page footer ────────────────────────────────────────────────────── -->
+<footer class="page-footer">
+  <div class="page-footer-inner">
+    <span>&copy; 2026 Paisa Tracker. All rights reserved.</span>
+    <span>This document is published in English. If you encounter a translated version, the English version prevails in case of conflict.</span>
+  </div>
+</footer>
+
+<script>
+  // Highlight the current section in the sticky TOC as the user scrolls.
+  // IntersectionObserver is cheap and avoids scroll-listener throttling.
+  (function () {
+    const links    = document.querySelectorAll('#toc a');
+    const sections = Array.from(document.querySelectorAll('main section'));
+    if (!('IntersectionObserver' in window) || sections.length === 0) return;
+
+    const linkById = new Map();
+    links.forEach(a => linkById.set(a.getAttribute('href').slice(1), a));
+
+    const setActive = (id) => {
+      links.forEach(a => a.classList.remove('active'));
+      const link = linkById.get(id);
+      if (link) link.classList.add('active');
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      // Pick the topmost section currently intersecting.
+      const visible = entries
+        .filter(e => e.isIntersecting)
+        .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+      if (visible.length > 0) setActive(visible[0].target.id);
+    }, {
+      rootMargin: '-96px 0px -65% 0px',
+      threshold: 0,
+    });
+
+    sections.forEach(s => observer.observe(s));
+  })();
+</script>
+
+</body>
+</html>
