@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Account & Data Deletion — Paisa Tracker</title>
+<meta name="description" content="How to permanently delete your Paisa Tracker account and all associated data.">
+<style>
+  :root {
+    /* Palette mirrors the Paisa Tracker app — kept in sync with index.html
+       (Privacy Policy) so the two pages feel like one document. Source of
+       truth is lib/core/theme/app_colors.dart in the Flutter project. */
+    --bg:                 #F8F7F4;
+    --surface:            #FFFFFF;
+    --surface-soft:       #F0EFE9;
+    --text:               #3D3D3A;
+    --text-soft:          #4D4D49;
+    --muted:              #73726C;
+    --border:             #D4D3CC;
+    --border-strong:      #A09F99;
+    --accent:             #185FA5;
+    --accent-soft:        #E6F1FB;
+    --accent-hover:       #0F3F6F;
+    --accent-amber:       #BA7517;
+    --accent-amber-soft:  #FAEEDA;
+    --danger:             #B83A3A;
+    --danger-soft:        #F9E5E5;
+    --shadow-sm:          0 1px 2px rgba(61, 61, 58, 0.05);
+    --shadow-md:          0 4px 16px rgba(61, 61, 58, 0.07);
+    --radius:             12px;
+    --radius-sm:          6px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  a { color: var(--accent); text-decoration: none; transition: color 0.15s ease; }
+  a:hover { color: var(--accent-hover); }
+
+  /* ── Top nav ─────────────────────────────────────────────────────────── */
+  .topnav {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .topnav-inner {
+    max-width: 920px; margin: 0 auto;
+    padding: 14px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .brand {
+    display: flex; align-items: center; gap: 10px;
+    font-weight: 700; font-size: 16px; letter-spacing: -0.01em; color: var(--text);
+  }
+  .brand-mark {
+    width: 32px; height: 32px;
+    border-radius: 8px; overflow: hidden;
+    box-shadow: var(--shadow-sm); flex-shrink: 0;
+  }
+  .brand-mark img { width: 100%; height: 100%; display: block; object-fit: cover; }
+  .topnav-tag { font-size: 13px; color: var(--muted); font-weight: 500; }
+
+  /* ── Hero ────────────────────────────────────────────────────────────── */
+  .hero {
+    background:
+      radial-gradient(800px 320px at 80% -40%, rgba(24, 95, 165, 0.13), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+  }
+  .hero-inner {
+    max-width: 920px; margin: 0 auto;
+    padding: 56px 32px 48px;
+  }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12px; font-weight: 600; color: var(--accent);
+    text-transform: uppercase; letter-spacing: 0.12em;
+    padding: 6px 12px; background: var(--accent-soft);
+    border-radius: 999px; margin-bottom: 16px;
+  }
+  .meta-dot {
+    display: inline-block; width: 6px; height: 6px;
+    border-radius: 50%; background: var(--accent);
+  }
+  h1 {
+    margin: 0 0 16px;
+    font-size: 38px; line-height: 1.15; letter-spacing: -0.02em;
+    font-weight: 800; color: var(--text);
+  }
+  .hero-lede {
+    margin: 0; font-size: 17px; color: var(--text-soft); max-width: 620px;
+  }
+
+  /* ── Main ────────────────────────────────────────────────────────────── */
+  main { max-width: 920px; margin: 0 auto; padding: 48px 32px 72px; }
+
+  section { margin-bottom: 40px; }
+  section:last-child { margin-bottom: 0; }
+  h2 {
+    margin: 0 0 12px;
+    font-size: 22px; letter-spacing: -0.01em; font-weight: 700;
+    display: flex; align-items: baseline; gap: 10px;
+  }
+  h2 .num {
+    font-size: 12px; font-weight: 700; color: var(--accent);
+    background: var(--accent-soft);
+    padding: 4px 8px; border-radius: var(--radius-sm);
+  }
+  p { margin: 0 0 12px; color: var(--text-soft); }
+  ul { padding-left: 22px; margin: 0 0 12px; color: var(--text-soft); }
+  ul li { margin-bottom: 6px; }
+
+  .step-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 14px;
+  }
+  .step-card strong { color: var(--text); }
+  .step-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px;
+    background: var(--accent); color: white;
+    border-radius: 50%; font-weight: 700; font-size: 13px;
+    margin-right: 10px; vertical-align: -3px;
+  }
+
+  .what-deleted {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    box-shadow: var(--shadow-sm);
+  }
+  .what-deleted ul { margin: 8px 0 0; }
+
+  .alt-box {
+    background: var(--accent-amber-soft);
+    border-left: 3px solid var(--accent-amber);
+    padding: 14px 18px;
+    border-radius: var(--radius-sm);
+    color: var(--text);
+  }
+
+  /* ── Footer ──────────────────────────────────────────────────────────── */
+  footer {
+    border-top: 1px solid var(--border);
+    background: var(--surface-soft);
+    padding: 32px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  footer a { color: var(--accent); font-weight: 500; }
+
+  @media (max-width: 640px) {
+    .topnav-inner, .hero-inner, main { padding-left: 20px; padding-right: 20px; }
+    h1 { font-size: 30px; }
+    .hero-inner { padding-top: 40px; padding-bottom: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── Top nav ─────────────────────────────────────────────────────────── -->
+<nav class="topnav">
+  <div class="topnav-inner">
+    <div class="brand">
+      <span class="brand-mark"><img src="app_logo.png" alt="Paisa Tracker logo"></span>
+      Paisa Tracker
+    </div>
+    <span class="topnav-tag">Account &amp; Data Deletion</span>
+  </div>
+</nav>
+
+<!-- ── Hero ────────────────────────────────────────────────────────────── -->
+<header class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow"><span class="meta-dot"></span> Your data, your control</span>
+    <h1>Delete your Paisa Tracker account</h1>
+    <p class="hero-lede">
+      You can permanently delete your Paisa Tracker account and every piece of data we hold for you — directly from inside the app, or by emailing us if you no longer have access to it. Deletion is immediate and irreversible.
+    </p>
+  </div>
+</header>
+
+<!-- ── Body ────────────────────────────────────────────────────────────── -->
+<main>
+
+  <section>
+    <h2><span class="num">01</span> Delete from inside the app</h2>
+    <p>This is the fastest method and confirms it's really you making the request.</p>
+
+    <div class="step-card">
+      <p><span class="step-num">1</span> Open <strong>Paisa Tracker</strong> on your phone and sign in.</p>
+    </div>
+    <div class="step-card">
+      <p><span class="step-num">2</span> Tap the <strong>Settings</strong> tab in the bottom navigation bar.</p>
+    </div>
+    <div class="step-card">
+      <p><span class="step-num">3</span> Scroll to the bottom and tap <strong>🗑️ Delete Account &amp; All Data</strong>.</p>
+    </div>
+    <div class="step-card">
+      <p><span class="step-num">4</span> Type <strong>DELETE</strong> in the confirmation field and tap the red <strong>Delete Account</strong> button.</p>
+    </div>
+    <p>Your account is removed instantly. You'll be signed out and returned to the welcome screen.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">02</span> Delete by email (no app access)</h2>
+    <p>If you've uninstalled the app, lost your phone, or otherwise cannot sign in, email us and we will delete your account for you.</p>
+
+    <div class="alt-box">
+      <p style="margin: 0;"><strong>Send to:</strong> <a href="mailto:support@paisatrackerapp.in?subject=Account%20deletion%20request">support@paisatrackerapp.in</a></p>
+      <p style="margin: 8px 0 0;"><strong>Subject:</strong> Account deletion request</p>
+      <p style="margin: 8px 0 0;"><strong>Include:</strong> the email address you used to sign in. We will verify the request from that address before processing.</p>
+    </div>
+    <p style="margin-top: 12px;">We aim to action email deletion requests within <strong>7 business days</strong>. You'll receive a confirmation once your data has been removed.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">03</span> What gets deleted</h2>
+    <div class="what-deleted">
+      <p style="margin: 0;"><strong>When you delete your account, the following is permanently removed:</strong></p>
+      <ul>
+        <li>Your profile (name, email, user ID).</li>
+        <li>Every transaction we have detected or that you have added manually.</li>
+        <li>Your SMS import history and all parsed messages.</li>
+        <li>Budgets, daily-limit settings, and category preferences.</li>
+        <li>Notification preferences and device push tokens (FCM).</li>
+        <li>Exported report history and any reports you generated.</li>
+        <li>App-lock PIN, biometric preference, and session tokens.</li>
+      </ul>
+    </div>
+    <p style="margin-top: 12px;">We do <strong>not</strong> keep any data after deletion. There is no soft-delete or 30-day recovery window — once it's gone, it's gone. If you change your mind later, you'll need to start fresh with a new sign-up.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">04</span> What we do <em>not</em> store</h2>
+    <p>Even before you delete, Paisa Tracker is built to hold as little as possible. We do not collect:</p>
+    <ul>
+      <li>Bank account numbers, card numbers, or login credentials.</li>
+      <li>Photographs, contacts, location, or call history.</li>
+      <li>SMS messages other than those that our parser recognises as bank transactions.</li>
+      <li>Any data shared with advertising or analytics networks.</li>
+    </ul>
+    <p>See the <a href="./">Privacy Policy</a> for the full picture.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">05</span> Questions?</h2>
+    <p>Privacy questions, deletion concerns, or anything else: <a href="mailto:support@paisatrackerapp.in">support@paisatrackerapp.in</a>.</p>
+  </section>
+
+</main>
+
+<!-- ── Footer ──────────────────────────────────────────────────────────── -->
+<footer>
+  <p style="margin: 0;">© 2026 Paisa Tracker · <a href="./">Privacy Policy</a> · <a href="mailto:support@paisatrackerapp.in">support@paisatrackerapp.in</a></p>
+</footer>
+
+</body>
+</html>
