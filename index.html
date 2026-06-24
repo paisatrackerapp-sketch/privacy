@@ -414,7 +414,7 @@
     </p>
     <div class="meta-row">
       <span class="meta-chip"><strong>Effective</strong> 15 June 2026</span>
-      <span class="meta-chip"><strong>Last updated</strong> 15 June 2026</span>
+      <span class="meta-chip"><strong>Last updated</strong> 22 June 2026</span>
       <span class="meta-chip"><span class="meta-dot"></span> Applies to all users worldwide</span>
     </div>
   </div>
@@ -637,7 +637,7 @@
         <li><strong>Account and transaction data</strong> &mdash; Retained for as long as your account exists. Deleted permanently when you delete your account.</li>
         <li><strong>Encrypted SMS bodies</strong> &mdash; Retained alongside the related transaction. Removed when you wipe SMS data or delete your account.</li>
         <li><strong>One-time passwords (OTP)</strong> &mdash; Expire ten minutes after issue and are removed shortly thereafter.</li>
-        <li><strong>JWT access tokens</strong> &mdash; Expire 24 hours after issue. Refresh tokens expire after seven days. Revoked tokens are retained on the blocklist only until their natural expiry.</li>
+        <li><strong>JWT access tokens</strong> &mdash; Expire 30 days after issue. Revoked tokens (when you sign out, or use <em>Sign Out Everywhere</em> from Settings) are retained on a server-side blocklist only until their natural expiry and survive server restarts.</li>
         <li><strong>Export job records</strong> &mdash; PDF reports are delivered to your email and the job record is removed within a short retention window after completion.</li>
         <li><strong>Diagnostic submissions</strong> &mdash; Kept until the parser-improvement work referenced by the submission is complete, then deleted.</li>
         <li><strong>Server logs</strong> &mdash; Routine request logs are retained for up to 30 days for security and debugging.</li>
@@ -661,7 +661,7 @@
       <h2><span class="num">09</span> Deleting your account</h2>
       <p>You can delete your account in two ways:</p>
       <ol>
-        <li><strong>From inside the App</strong> &mdash; Go to <em>Settings &rarr; Account &rarr; Delete account</em>. You will be asked to confirm. The deletion is immediate and permanent.</li>
+        <li><strong>From inside the App</strong> &mdash; Go to <em>Settings &rarr; Delete Account &amp; All Data</em>, type <strong>DELETE</strong> in the confirmation field, and tap <strong>Send Code</strong>. We will email a six-digit deletion code to your registered address; enter it back in the App and tap <strong>Delete Forever</strong>. The deletion is immediate and permanent. You will then receive a final confirmation email listing what was removed. The two-step OTP gate is what stops a stolen or temporarily-borrowed phone from being enough to wipe your account on its own. A dedicated step-by-step guide is available at <a href="./account-deletion.html">account-deletion.html</a>.</li>
         <li><strong>By email request</strong> &mdash; If you no longer have the App installed, send a deletion request from the email address registered with your account to <a href="mailto:support@paisatrackerapp.in">support@paisatrackerapp.in</a> with the subject line <em>"Account deletion request"</em>. We will verify ownership by sending an OTP to that email and complete deletion within seven business days.</li>
       </ol>
       <p>Deletion removes: your account record, all transactions, encrypted SMS bodies, budgets, preferences, device tokens, notification history, and export job records associated with your account. Routine server logs may retain anonymised request metadata for up to 30 days as described in section&nbsp;7. Once deleted, your data cannot be recovered.</p>
