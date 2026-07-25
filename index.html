@@ -414,7 +414,7 @@
     </p>
     <div class="meta-row">
       <span class="meta-chip"><strong>Effective</strong> 15 June 2026</span>
-      <span class="meta-chip"><strong>Last updated</strong> 22 June 2026</span>
+      <span class="meta-chip"><strong>Last updated</strong> 25 July 2026</span>
       <span class="meta-chip"><span class="meta-dot"></span> Applies to all users worldwide</span>
     </div>
   </div>
@@ -557,6 +557,8 @@
         <li><strong>Sending notifications</strong> &mdash; We send push notifications for events such as daily-limit alerts, budget breach warnings, large-spend warnings, and parser updates. You can disable individual categories of notifications in App Settings.</li>
         <li><strong>Generating reports</strong> &mdash; When you request a PDF report, we generate it server-side and email it to the address registered on your account.</li>
         <li><strong>Improving SMS parsing</strong> &mdash; If you opt in by submitting an "untracked SMS" report, we use that submission to improve our parser. Submission is always manual and you choose what to send.</li>
+        <li><strong>Categorising your spending</strong> &mdash; We automatically assign each transaction to a spending category (for example Food, Travel, or Bills) using a machine-learning model that runs on our own servers. The model reads only the transaction text already extracted from your bank SMS. It is used solely to organise your spending inside the App, is never used for advertising, credit-scoring, or any external decision-making, and is never shared with or made available to any third party. If the model is unsure, the transaction is marked "needs review" so you can set the category yourself.</li>
+        <li><strong>Improving categorisation (opt-in "Smart Categorization")</strong> &mdash; This feature is <strong>off by default</strong>. If you turn it on in Settings and then correct or confirm a transaction's category, we use that correction &mdash; limited to the standard spending categories and the merchant name, with no amounts or account details &mdash; to improve the accuracy of the categorisation model for all users. Labels for well-known merchants may be aggregated across users so a merchant is recognised more reliably. While the feature is off, your corrections change only your own transactions and are never used for model training.</li>
         <li><strong>Security and abuse prevention</strong> &mdash; We log basic request metadata (request type, network IP address, timestamp) to detect and block abuse, brute-force attempts, and email bombing.</li>
       </ul>
       <p>We do <strong>not</strong>: serve advertisements, build advertising profiles, sell your data, share your data with data brokers, or use your data to train machine-learning models that are made available to third parties.</p>
