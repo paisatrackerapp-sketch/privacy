@@ -414,7 +414,7 @@
     </p>
     <div class="meta-row">
       <span class="meta-chip"><strong>Effective</strong> 15 June 2026</span>
-      <span class="meta-chip"><strong>Last updated</strong> 25 July 2026</span>
+      <span class="meta-chip"><strong>Last updated</strong> 26 July 2026</span>
       <span class="meta-chip"><span class="meta-dot"></span> Applies to all users worldwide</span>
     </div>
   </div>
@@ -560,6 +560,7 @@
         <li><strong>Categorising your spending</strong> &mdash; We automatically assign each transaction to a spending category (for example Food, Travel, or Bills) using a machine-learning model that runs on our own servers. The model reads only the transaction text already extracted from your bank SMS. It is used solely to organise your spending inside the App, is never used for advertising, credit-scoring, or any external decision-making, and is never shared with or made available to any third party. If the model is unsure, the transaction is marked "needs review" so you can set the category yourself.</li>
         <li><strong>Improving categorisation (opt-in "Smart Categorization")</strong> &mdash; This feature is <strong>off by default</strong>. If you turn it on in Settings and then correct or confirm a transaction's category, we use that correction &mdash; limited to the standard spending categories and the merchant name, with no amounts or account details &mdash; to improve the accuracy of the categorisation model for all users. Labels for well-known merchants may be aggregated across users so a merchant is recognised more reliably. While the feature is off, your corrections change only your own transactions and are never used for model training.</li>
         <li><strong>Security and abuse prevention</strong> &mdash; We log basic request metadata (request type, network IP address, timestamp) to detect and block abuse, brute-force attempts, and email bombing.</li>
+        <li><strong>Understanding usage and fixing crashes</strong> &mdash; We use Firebase Analytics to measure basic, aggregate app usage (for example, how many people complete onboarding or sign in) and Firebase Crashlytics to capture crash and error diagnostics, so we can fix bugs and improve the App. This is collected only in the released app and is not used to profile you as an individual.</li>
       </ul>
       <p>We do <strong>not</strong>: serve advertisements, build advertising profiles, sell your data, share your data with data brokers, or use your data to train machine-learning models that are made available to third parties.</p>
 
@@ -567,7 +568,7 @@
       <p>We avoid common patterns found in other free apps that can quietly erode user privacy. Specifically, Paisa Tracker contains no:</p>
       <ul>
         <li><strong>Cookies or web-tracking technologies</strong> &mdash; the App is native; there are no web cookies, no local storage cookies, no fingerprinting scripts.</li>
-        <li><strong>Third-party analytics SDKs</strong> &mdash; no Google Analytics, no Firebase Analytics, no Mixpanel, no Amplitude, no PostHog. We do not collect screen-view events, tap heatmaps, or session recordings.</li>
+        <li><strong>Invasive or behavioural analytics</strong> &mdash; beyond the basic usage and crash diagnostics described in section&nbsp;4 (Firebase Analytics &amp; Crashlytics), we use no behavioural-profiling SDKs (no Mixpanel, Amplitude, or PostHog), no tap heatmaps, no session or screen recordings, and no advertising or attribution analytics.</li>
         <li><strong>Advertising or attribution SDKs</strong> &mdash; no AdMob, no Facebook SDK, no AppsFlyer, no Adjust, no Branch.</li>
         <li><strong>Marketing email lists</strong> &mdash; every email we send is transactional: a one-time password, a report you requested, a security alert, or a deletion confirmation. We do not send newsletters or promotional emails.</li>
         <li><strong>Automated profiling for advertising or decision-making</strong> &mdash; we categorise transactions to display them in the App, but we do not score, rank, or profile you for any external purpose.</li>
@@ -594,6 +595,18 @@
               <td>Firebase Cloud Messaging (Google LLC)</td>
               <td>Device FCM token; notification payloads, which contain a short human-readable message and no card numbers or balances</td>
               <td>Delivering push notifications to your device</td>
+            </tr>
+            <tr>
+              <td><strong>Usage analytics</strong></td>
+              <td>Firebase Analytics (Google LLC)</td>
+              <td>Aggregate in-app events (e.g. sign-in, onboarding step) and a Google-generated app-instance identifier; no transaction contents</td>
+              <td>Understanding basic app usage to improve features</td>
+            </tr>
+            <tr>
+              <td><strong>Crash diagnostics</strong></td>
+              <td>Firebase Crashlytics (Google LLC)</td>
+              <td>Crash stack traces, device model, OS version, and app state at time of crash; no transaction contents</td>
+              <td>Detecting and fixing crashes and errors</td>
             </tr>
             <tr>
               <td><strong>Transactional email</strong></td>
